@@ -34,28 +34,31 @@ public class AlgoritmoDijkstra {
         // generar un proceso iterativo 
         // donde estaremos agregando ciudades 
         // al caminoSolucion 
-        
-        while (this.ciudadesDisponibles.size()!=0){
+        while (!this.ciudadesDisponibles.isEmpty()){
           
-         //definir un proceso itertivo donde agreguemos 
-         // ciudades con el argumento de distancia minima 
-         
-         for (int x = 0; x < this.ciudadesDisponibles.size();x++){
-         
+        //definir un proceso iterativo donde agreguemos 
+        // ciudades con el argumento de distancia minima 
+        int ciudadUltima =  caminoSolucion.getCamino().getLast();
+        int distMenor = Camino.md[ciudadUltima][this.ciudadesDisponibles.getFirst()]; 
+        int iM = 0;
+        for (int x = 1; x < this.ciudadesDisponibles.size();x++){
+           // buscar un menor 
+           if (Camino.md[this.ciudadesDisponibles.get(x)][ciudadUltima]<distMenor){
+           distMenor = Camino.md[x][ciudadUltima];
+           // guardar el indice 
+           iM = x;
+           }
          
          }
-        
+        // agregmos al camino la ciudad con distancia menor 
+        caminoSolucion.agregarCiudad(this.ciudadesDisponibles.get(iM));
+        // eliminamos de las ciudades disponibles 
+        this.ciudadesDisponibles.remove(iM);
         
         }
+       
         
-        
-        
-        
-     
-        
-        
-        
-        
+        return null;
     
     }
     
