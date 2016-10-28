@@ -31,6 +31,7 @@ public class AlgoritmoDijkstra {
         
         Camino caminoSolucion = new Camino();
         caminoSolucion.agregarCiudad(ciudadInicial);
+        this.ciudadesDisponibles.remove(ciudadInicial);
         // generar un proceso iterativo 
         // donde estaremos agregando ciudades 
         // al caminoSolucion 
@@ -56,9 +57,12 @@ public class AlgoritmoDijkstra {
         this.ciudadesDisponibles.remove(iM);
         
         }
+        
+        // agregar la distancia entre la primera y la ultima 
+        caminoSolucion.agregarCiudad(ciudadInicial);
        
         
-        return null;
+        return caminoSolucion;
     
     }
     

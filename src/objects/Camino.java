@@ -27,10 +27,21 @@ public class Camino {
     }
     
     public void agregarCiudad(int numCiudad){
-     int cUltima = this.getCamino().getLast();
+     
+        
+        if (camino.isEmpty()){
+         this.camino.add(numCiudad);
+        }else {
+            
+        int cUltima = this.getCamino().getLast();
      this.getCamino().add(numCiudad);
      // reecalcular la distancia total recorrida
      this.distanciaRecorrida += this.md[cUltima][numCiudad];
+        
+        
+        }
+        
+        
     }
 
     @Override
