@@ -45,7 +45,7 @@ public class AlgoritmoDijkstra {
         for (int x = 1; x < this.ciudadesDisponibles.size();x++){
            // buscar un menor 
            if (Camino.md[this.ciudadesDisponibles.get(x)][ciudadUltima]<distMenor){
-           distMenor = Camino.md[x][ciudadUltima];
+           distMenor = Camino.md[this.ciudadesDisponibles.get(x)][ciudadUltima];
            // guardar el indice 
            iM = x;
            }
